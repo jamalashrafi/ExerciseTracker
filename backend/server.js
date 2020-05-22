@@ -5,7 +5,7 @@ const cors = require('cors');//used to cnosume rest api from outside server
 const mongoose = require('mongoose');//Returns singleton object of mongoose
 
 require('dotenv').config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 const app = express();
 
 app.use(cors());
