@@ -24,7 +24,7 @@ export default class CreateUser extends Component{
         const user = {
             username : this.state.username
         }
-        axios.post("http://localhost:5000/users/add/",user)
+        axios.post("/users/add/",user)
         .then( res => console.log(res.data, "user added to MongoDB"))
         .catch(err => console.log(err));
         this.setState({ username : "" })
