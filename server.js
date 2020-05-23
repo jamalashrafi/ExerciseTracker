@@ -3,6 +3,7 @@
 const express = require('express');
 const cors = require('cors');//used to cnosume rest api from outside server
 const mongoose = require('mongoose');//Returns singleton object of mongoose
+const path = require('path');
 
 require('dotenv').config();
 const port = process.env.PORT || 5000;
@@ -27,6 +28,12 @@ app.use('/users', usersRouter);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static("client/build"));
+
+    // Express serve up index.html file if it doesn't recognize route
+  
+    app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
 }
 
 app.listen(port, ()=>{
