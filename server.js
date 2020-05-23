@@ -6,7 +6,7 @@ const mongoose = require('mongoose');//Returns singleton object of mongoose
 const path = require('path');
 
 require('dotenv').config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app.use(cors());
